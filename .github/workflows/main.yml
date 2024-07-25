@@ -15,7 +15,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: verademoJS
-          path: $GITHUB_WORKSPACE/*/
+          path: .
   pipeline-scan:
     runs-on: veracode/pipeline-scan:latest
     needs: build
