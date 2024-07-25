@@ -11,11 +11,11 @@ jobs:
       - name: Print current path
         run: echo "Current path is $GITHUB_WORKSPACE"
       - name: List contents of the target path
-        run: ls -al $GITHUB_WORKSPACE/target
+        run: ls -al $GITHUB_WORKSPACE
       - uses: actions/upload-artifact@v4
         with:
           name: verademoJS
-          path: ./**/*
+          path: $GITHUB_WORKSPACE/**/*
   pipeline-scan:
     runs-on: veracode/pipeline-scan:latest
     needs: build
