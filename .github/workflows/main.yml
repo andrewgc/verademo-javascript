@@ -1,0 +1,18 @@
+name: pipeline-scan 
+
+on: push
+
+jobs:
+  build:
+    runs-on: veracode/pipeline-scan:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Print current path
+        run: echo "Current path is $GITHUB_WORKSPACE"
+      - name: List contents of the target path
+        run: ls -al $GITHUB_WORKSPACE/target
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verademoJS
+          path: target/
