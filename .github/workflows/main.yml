@@ -50,7 +50,7 @@ jobs:
           VERACODE_API_KEY_SECRET: ${{ secrets.VERACODE_API_KEY }}
   veracode-fix:
     runs-on: ubuntu-latest
-    needs: pipeline_scan
+    needs: pipeline-scan
     name: Veracode Fix
     steps:
       - name: checkout repo
